@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './service/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'employeUI';
+  title = 'Gestion des employees';
+  /**
+   *
+   */
+  constructor(private auth:AuthenticationService) {
+
+    
+  }
+  isLogin(){
+    return this.auth.isAuthenticated()
+  }
 }

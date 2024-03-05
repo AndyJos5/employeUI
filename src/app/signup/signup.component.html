@@ -1,0 +1,36 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Nouveau compte</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" [formGroup]="userForm" (ngSubmit)="register()">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nom d'utilisateur" formControlName="username">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Adresse mail" type="email" formControlName="email">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mot de passe" type="password" formControlName="password">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Choisir un role</mat-label>
+            <mat-select formControlName="role">
+              <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles | lowercase}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" class="btn-block">Register</button>
+  
+      </form>
+    </mat-card>
+  </div>
